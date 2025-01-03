@@ -90,6 +90,7 @@ def _discover_modules_bundled() -> List["Module"]:
 def _discover_modules_system() -> List["Module"]:
     """Find all aw- modules in PATH"""
     search_paths = os.get_exec_path()
+    logger.info(f"Found this $PATH: {search_paths}")
 
     # Needed because PyInstaller adds the executable dir to the PATH
     if _parent_dir in search_paths:
